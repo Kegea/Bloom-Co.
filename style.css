@@ -163,8 +163,9 @@ footer { background: var(--bark); padding: 52px 80px; display: flex; align-items
 @keyframes riseUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
 @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 @keyframes slideRight { from{opacity:0;transform:translateX(-28px)} to{opacity:1;transform:translateX(0)} }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; animation: forceReveal 0s 1.5s forwards; }
+.reveal.in { opacity: 1; transform: translateY(0); animation: none; }
+@keyframes forceReveal { to { opacity: 1; transform: translateY(0); } }
 
 @keyframes float {
   0% { transform: translateY(0px); }
